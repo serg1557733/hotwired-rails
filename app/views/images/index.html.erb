@@ -6,10 +6,16 @@
 
 <% @images.each do |image| %>
   <%= tag.section class: 'my-5 align-center',
-                  data: {controller: 'images toast', action: "images:copied->toast#show"} do %>
+                  data: {
+                    controller: 'images toast',
+                    action: "images:copied->toast#show",
+                    'images-loading-class': 'disabled',
+                    'images-id-value': image.id,
+                  } do %>
 
-    <%= image_tag image.url, class: 'rounded block', alt: image.title, data: {'action':"click->images#copy",
-                                                                              'images-target':'image'}   %>
+    <%= image_tag image.url, class: 'rounded block',
+                  alt: image.title, data: {'action':"click->images#copy",
+                                           'images-target':'image'}   %>
 
   <% end %>
 
