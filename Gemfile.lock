@@ -206,6 +206,8 @@ GEM
     regexp_parser (2.9.2)
     reline (0.5.10)
       io-console (~> 0.5)
+    requestjs-rails (0.0.12)
+      railties (>= 6.1.0)
     rexml (3.3.8)
     rubyzip (2.3.2)
     selenium-webdriver (4.25.0)
@@ -286,6 +288,7 @@ DEPENDENCIES
   propshaft
   puma (>= 5.0)
   rails (~> 7.1.4)
+  requestjs-rails
   selenium-webdriver
   sqlite3 (>= 1.4)
   stimulus-rails

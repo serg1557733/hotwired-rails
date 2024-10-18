@@ -1,4 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
+import { patch } from '@rails/request.js'
+
 
 export default class extends Controller {
     static targets = ['image', 'title', 'save'] //name from tag
@@ -32,26 +34,17 @@ export default class extends Controller {
         e.preventDefault();
         e.target.disabled = true;
         e.target.classList.add(this.loadingClass)
-
-        const formData = new FormData();
-        formData.append('image[title]', this.titleTarget.innerText)
-        await this.doPatch(`api/images/${this.idValue}`, formData)
+         this.doPatch(`api/images/${this.idValue}`,
+            JSON.stringify({image: { title: this.titleTarget.innerText}}))
         e.target.remove();
     }
-
 
     titleTargetConnected(){
         console.log('element connected')
     }
 
     async doPatch(url, body){
-        const csrfToken = document.getElementsByName('csrf-token')[0].content
-        await fetch(url, {
-            method: 'PATCH',
-            body,
-            headers: {
-                'X-CSRF-Token': csrfToken
-            }
-        })
+       const response =  await patch(url, {body})
+        if (!response.ok) throw new Error('filed to patch')
     }
 }
