@@ -1,4 +1,8 @@
-<section>
+
+
+<%= turbo_frame_tag folder do %>
+
+<section class="border py-5 my-5">
     <h2><%= folder.title %> </h2>
     <br>
     <p><%= folder.description%>></p>
@@ -8,3 +12,4 @@
     <%= link_to "Edit", edit_folder_path(folder), class: "btn btn-primary" %>
   </button>
 </section>
+<% end %>
