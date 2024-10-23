@@ -1,2 +1,7 @@
 /* Application styles */
 
+/* app/assets/stylesheets/application.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

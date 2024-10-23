@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   end
 
   resources :folders
- root "layouts#index"
+ root "folders#index"
 end

@@ -12,6 +12,7 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.10",
-    "@rails/request.js": "^0.0.11"
+    "@rails/request.js": "^0.0.11",
+    "tailwindcss": "^3.4.14"
   }
 }

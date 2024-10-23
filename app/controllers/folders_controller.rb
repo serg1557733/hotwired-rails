@@ -5,6 +5,18 @@ class FoldersController < ApplicationController
     @folders  = Folder.order created_at: :desc
   end
 
+  def create
+    @folder = Folder.new folder_params
+    if @folder.save
+
+    else
+      render :new
+    end
+  end
+
+  def new
+    @folder = Folder.new
+  end
   def edit;
   end
 
