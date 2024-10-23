@@ -1,6 +1,9 @@
 <h1> Folders</h1>
 <div style="margin: 0 auto">
-  <%= render 'add_folder' %>
+
+  <%= turbo_frame_tag Folder.new do %>
+    <%= render 'add_folder' %>
+  <% end %>
 
   <%= render @folders %>
 </div>
