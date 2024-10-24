@@ -8,5 +8,10 @@
     <p><%= folder.description%>></p>
   <br>
     <%= link_to "Edit", edit_folder_path(folder), class: "btn-primary" %>
+    <%= link_to "Delete", folder_path(folder), class: "btn-primary", data: {
+      turbo_confirm: "Are you sure?",
+      turbo_method: :delete,
+    } %>
+
 </section>
 <% end %>
