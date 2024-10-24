@@ -1,0 +1,3 @@
+<% flash.each do|v, k| %>
+  <%= tag.div v.to_s + " : "+k.to_s , style: "border: 2px solid red; width: 300px", role:'alert' %>
+<% end %>
